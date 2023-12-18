@@ -38,6 +38,40 @@ A = 10</br>
 B = 20</br>
 C = 15</br>
 Oui C est compris entre A et B</p>
+<form action="#" method="post">
+    <p>Saisir la valeur 1 : <input type="text" id="inputValeur" name="valeurcomp1">
+    <p>Saisir la valeur 2 : <input type="text" id="inputValeur" name="valeurcomp2">
+    <p>Saisir la valeur 3 pour savoir si elle est comprise entre la valeur 1 et la valeur 2 : <input type="text" id="inputValeur" name="valeurcomp3">
+    <p><input type="submit" value="Afficher">
+</form>
+<%-- Récupération des valeurs --%>
+    <% String valeurcomp1 = request.getParameter("valeurcomp1"); %>
+    <% String valeurcomp2 = request.getParameter("valeurcomp2"); %>
+    <% String valeurcomp3 = request.getParameter("valeurcomp3"); %>
+
+    <%-- Vérification de la condition entre les deux valeurs --%>
+    <% if (valeurcomp1 != null && valeurcomp2 != null && valeurcomp3 != null) { %>
+        <%-- Conversion des valeurs en entiers pour la comparaison --%>
+        <% int intValeurcomp1 = Integer.parseInt(valeurcomp1); %>
+        <% int intValeurcomp2 = Integer.parseInt(valeurcomp2); %>
+        <% int intValeurcomp3 = Integer.parseInt(valeurcomp3); %>
+        
+        <%-- Condition if pour comparer les valeurs --%>
+        <% if (intValeurcomp1 > intValeurcomp3) { %>
+            <% if (intValeurcomp2 < intValeurcomp3) { %>
+                <p>La valeur 3 est entre la valeur 1 et la valeur 2.</p>
+            <% } else { %>
+                <p>La valeur 3 n'est pas entre la velur 2 et la valeur 3</p>
+            <% } %>
+        <% } else if (intValeurcomp1 < intValeurcomp3) { %>
+            <% if (intValeurcomp2 > intValeurcomp3) { %>
+                <p>La valeur 3 est entre la valeur 1 et la valeur 2.</p>
+            <% } else { %>
+                <p>La valeur 3 n'est pas entre la velur 2 et la valeur 3</p>
+            <% } %>
+        <% } else { %>
+            <p>La valeur 3 n'est pas entre la velur 2 et la valeur 3</p>
+        <% } %>
 
 <h2>Exercice 2 : Pair ou Impair ?</h2>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
