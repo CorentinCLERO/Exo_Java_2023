@@ -110,16 +110,16 @@ réponse : <br/>
 réponse : <br/>
 <% for (int i = 1; i <= cpt; i++) { %>
     <% for (int j = cpt - i; j >= 1; j--) { %>
-        <%= "&nbsp;" %><%= "&nbsp;" %>
+        <%= "&nbsp;" %>
     <% } %>
     <% for (int k = 1; k <= i; k++) { %>
         <%= "*" %>
     <% } %>
     <br/>
 <% } %>
-<% for (int i = 1; i <= cpt; i++) { %>
-    <% for (int j = 1; j >= i) { %>
-        <%= "&nbsp;" %><%= "&nbsp;" %>
+<% for (int i = cpt - 1; i >= 1; i--) { %>
+    <% for (int j = 1; j <= cpt - i; j++) { %>
+        <%= "&nbsp;" %>
     <% } %>
     <% for (int k = 1; k <= i; k++) { %>
         <%= "*" %>
@@ -140,12 +140,8 @@ réponse : <br/>
 réponse : <br/>
 <% for (int i = 1; i <= cpt; i++) { %>
     <% for (int j = cpt - i; j >= 1; j--) { %>
-        <%= "&nbsp;" %><%= "&nbsp;" %>
+        <p><%= "5 x " + i + " = " + (5 * i) %><p>
     <% } %>
-    <% for (int k = 1; k <= i; k++) { %>
-        <%= "*" %>
-    <% } %>
-    <br/>
 <% } %>
 </p>
 
