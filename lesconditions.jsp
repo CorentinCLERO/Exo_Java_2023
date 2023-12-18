@@ -26,7 +26,8 @@
             int intValeur2 = Integer.parseInt(valeur2);
             int intValeur3 = Integer.parseInt(valeur3);
 
-            if (intValeur3 > intValeur1 && intValeur3 < intValeur2) {
+            if ((intValeur3 > intValeur1 && intValeur3 < intValeur2) || (intValeur3 < intValeur1 && intValeur3 > intValeur2))
+            {
 %>
                 <p>La valeur 3 est entre la valeur 1 et la valeur 2.</p>
 <%
