@@ -20,24 +20,30 @@
     String valeur2 = request.getParameter("valeur2");
     String valeur3 = request.getParameter("valeur3");
 
-    if (valeur1 != null && valeur2 != null && valeur3 != null) {
-        int intValeur1 = Integer.parseInt(valeur1);
-        int intValeur2 = Integer.parseInt(valeur2);
-        int intValeur3 = Integer.parseInt(valeur3);
-    
-        if (intValeur3 > intValeur1 && intValeur3 < intValeur2) {
+    if (valeur1 != null && !valeur1.isEmpty() && valeur2 != null && !valeur2.isEmpty() && valeur3 != null && !valeur3.isEmpty()) {
+        try {
+            int intValeur1 = Integer.parseInt(valeur1);
+            int intValeur2 = Integer.parseInt(valeur2);
+            int intValeur3 = Integer.parseInt(valeur3);
+
+            if (intValeur3 > intValeur1 && intValeur3 < intValeur2) {
 %>
-            <p>La valeur 3 est entre la valeur 1 et la valeur 2.</p>
+                <p>La valeur 3 est entre la valeur 1 et la valeur 2.</p>
 <%
-        } else {
+            } else {
 %>
-            <p>La valeur 3 n'est pas entre la valeur 1 et la valeur 2.</p>
+                <p>La valeur 3 n'est pas entre la valeur 1 et la valeur 2.</p>
+<%
+            }
+        } catch (NumberFormatException e) {
+%>
+            <p>Erreur de conversion en entier.</p>
 <%
         }
-    } else if (valeur2 != null) {
+    } else if (valeur2 != null && !valeur2.isEmpty()) {
         int intValeur1 = Integer.parseInt(valeur1);
         int intValeur2 = Integer.parseInt(valeur2);
-        
+
         if (intValeur1 > intValeur2) {
 %>
             <p>Valeur 1 est supérieure à Valeur 2.</p>
@@ -51,7 +57,7 @@
             <p>Valeur 1 est égale à Valeur 2.</p>
 <%
         }
-    } else if (valeur1 != null) {
+    } else if (valeur1 != null && !valeur1.isEmpty()) {
         int intValeur1 = Integer.parseInt(valeur1);
         if (intValeur1 % 2 == 0) {
 %>
@@ -68,6 +74,7 @@
 <%
     }
 %>
+
 
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
