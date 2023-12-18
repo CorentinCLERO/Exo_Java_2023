@@ -8,7 +8,7 @@
 <body bgcolor="white">
 <h1>Exercices sur les conditions</h1>
 <form action="#" method="post">
-    <p>Saisir la valeur 1 : <input type="text" id="inputValeur1" name="valeur1"></p>
+    <p>Saisir la valeur 1 pour savoir si elle est pair ou impair : <input type="text" id="inputValeur1" name="valeur1"></p>
     <p>Saisir la valeur 2 pour comparer à la valeur 1 : <input type="text" id="inputValeur2" name="valeur2"></p>
     <p>Saisir la valeur 3 pour savoir si elle est comprise entre 1 et 2 : <input type="text" id="inputValeur3" name="valeur3"></p>
     <p><input type="submit" value="Afficher"></p>
