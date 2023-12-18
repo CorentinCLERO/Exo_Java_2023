@@ -45,9 +45,10 @@ réponse : <br/>
 <p>*</br>**</br>***</br>****</br>*****</p>
 <p>
 réponse : <br/>
-<% for (int i = 1; i <= cpt; i++) { %>
-    i * <%= "*" %>
-    <br/>
+<% for (int i = 1; i <= cpt; i++) { i * %>
+    <% for (int j = 1; j <= i; j++) { %>
+        <%= "*" %>
+    <% } %>
 <% } %>
 </p>
 
