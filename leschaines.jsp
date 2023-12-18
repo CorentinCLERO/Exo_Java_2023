@@ -61,7 +61,14 @@ u</br>
 r</p>
 <p>
 réponse : <br/>
-
+<%
+    for (int i = 0; i < chaine.length(); i++) {
+        char caractere = chaine.charAt(i);
+%>
+        <%= caractere %><br/>
+<%
+    }
+%>
 </p>
 
 <h2>Exercice 3 : Retour à la ligne</h2>
