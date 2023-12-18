@@ -75,7 +75,7 @@ réponse : <br/>
 réponse : <br/>
 <% for (int i = 1; i <= cpt; i++) { %>
     <% for (int j = cpt - i; j >= 1; j--) { %>
-        <%= "&nbsp;" %>
+        <%= "&nbsp;" %><%= "&nbsp;" %>
     <% } %>
     <% for (int k = 1; k <= i; k++) { %>
         <%= "*" %>
