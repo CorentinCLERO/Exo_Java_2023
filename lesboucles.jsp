@@ -140,7 +140,7 @@ réponse : <br/>
 <p>
 réponse : <br/>
 <% for (int i = 1; i <= cpt; i++) { %>
-    <p><%= cpt " x " + i + " = " + (cpt * i) %><p>
+    <p><%= cpt + " x " + i + " = " + (cpt * i) %><p>
 <% } %>
 </p>
 
