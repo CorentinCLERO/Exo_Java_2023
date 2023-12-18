@@ -73,7 +73,15 @@ réponse : <br/>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
 <p>
 réponse : <br/>
-
+<% for (int i = 1; i <= cpt; i++) { %>
+    <% for (int j = cpt - i; j <= i; j++) { %>
+        <%= "&nbsp;" %>
+    <% } %>
+    <% for (int j = 1; j <= i; j++) { %>
+        <%= "*" %>
+    <% } %>
+    <br/>
+<% } %>
 </p>
 
 <h2>Exercice 5 : Triangle isocele</h2>
