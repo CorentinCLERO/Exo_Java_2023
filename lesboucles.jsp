@@ -108,7 +108,7 @@ réponse : <br/>
 <p>*****</br>&nbsp;&nbsp;****</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</p>
 <p>
 réponse : <br/>
-
+test
 </p>
 
 <h2>Exercice 7 : La table de multiplication</h2>
