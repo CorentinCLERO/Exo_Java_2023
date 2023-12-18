@@ -37,11 +37,11 @@
 <p>
 réponse : <br/>
 <%
-    char recherche = 'e';
+    char rechercheE = 'e';
     int compteur = 0;
 
     for (int i = 0; i < chaine.length(); i++) {
-        if (chaine.charAt(i) == recherche) {
+        if (chaine.charAt(i) == rechercheE) {
             compteur++;
         }
     }
