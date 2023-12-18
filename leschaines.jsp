@@ -37,7 +37,6 @@
 <p>
 réponse : <br/>
 <%
-    String chaine = "votre_chaine_de_caractere";
     char recherche = 'e';
     int compteur = 0;
 
