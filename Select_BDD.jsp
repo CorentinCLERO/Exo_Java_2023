@@ -48,22 +48,39 @@ while (rs.next()) {
   String colonne1 = rs.getString("idFilm");
   String colonne2 = rs.getString("titre");
   String colonne3 = rs.getString("année");
-  if (2000 < colonne3 < 2015 ) {
+  if (2000 < colonne3 && colonne3 < 2015) {
     out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
   }
 }
-
 %>
 </p>
 
 <h2>Exercice 2 : Année de recherche</h2>
 <p>Créer un champ de saisie permettant à l'utilisateur de choisir l'année de sa recherche.</p>
+<p>
+Réponse : <br/>
+<%
+
+%>
+</p>
 
 <h2>Exercice 3 : Modification du titre du film</h2>
 <p>Créer un fichier permettant de modifier le titre d'un film sur la base de son ID (ID choisi par l'utilisateur)</p>
+<p>
+Réponse : <br/>
+<%
+
+%>
+</p>
 
 <h2>Exercice 4 : La valeur maximum</h2>
 <p>Créer un formulaire pour saisir un nouveau film dans la base de données</p>
+<p>
+Réponse : <br/>
+<%
+
+%>
+</p>
 
 </body>
 </html>
