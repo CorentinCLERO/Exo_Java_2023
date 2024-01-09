@@ -41,6 +41,20 @@
 
 <h2>Exercice 1 : Les films entre 2000 et 2015</h2>
 <p>Extraire les films dont l'année est supérieur à l'année 2000 et inférieur à 2015.</p>
+<p>
+Réponse : <br/>
+<%
+while (rs.next()) {
+  String colonne1 = rs.getString("idFilm");
+  String colonne2 = rs.getString("titre");
+  String colonne3 = rs.getString("année");
+  if (2000 < colonne3 < 2015 ) {
+    out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
+  }
+}
+
+%>
+</p>
 
 <h2>Exercice 2 : Année de recherche</h2>
 <p>Créer un champ de saisie permettant à l'utilisateur de choisir l'année de sa recherche.</p>
