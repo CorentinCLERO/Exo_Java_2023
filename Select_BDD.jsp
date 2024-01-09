@@ -91,8 +91,17 @@ if (yearString != null && !yearString.isEmpty()) {
         // Gérer le cas où la chaîne n'est pas un nombre valide
     }
 }
-%>
-<%
+
+for (Map<String, String> film : films) {
+  String id = film.get("id");
+  String titre = film.get("titre");
+  String annee = film.get("année");
+  int anneenum = Integer.parseInt(annee);
+
+  if (anneenum == year) {
+    out.println("id : " + id + ", titre : " + titre + ", année : " + annee + "</br>");
+  }
+}
 
 %>
 </p>
