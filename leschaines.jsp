@@ -121,13 +121,6 @@ Exemple : L'hiver sera pluvieux</br>
 xueivulp ares revih'l</p>
 <p>
 réponse : <br/>
-
-</p>
-
-<h2>Exercice 6 : Consonnes et voyelles</h2>
-<p>Ecrire le programme afin de compter les consonnes et les voyelles dans votre texte</p>
-<p>
-réponse : <br/>
 <%
     for (int i = chaine.length() - 1; i >= 0; i--) {
         char caractere = chaine.charAt(i);
@@ -135,6 +128,29 @@ réponse : <br/>
         <%= caractere %>
 <%
     }
+%>
+</p>
+
+<h2>Exercice 6 : Consonnes et voyelles</h2>
+<p>Ecrire le programme afin de compter les consonnes et les voyelles dans votre texte</p>
+<p>
+réponse : <br/>
+<%
+int compteurVoyelles = 0;
+int compteurConsonnes = 0;
+String voyelles = "aeiouy"; // Utilisez une chaîne de caractères pour les voyelles
+
+for (int i = 0; i < chaine.length(); i++) {
+    char caractere = chaine.charAt(i);
+    
+    if (voyelles.indexOf(caractere) != -1) { // Utilisez indexOf pour vérifier si le caractère est une voyelle
+        compteurVoyelles++;
+    } else if (caractere != ' ') {
+        compteurConsonnes++;
+    }
+}
+
+out.print("Il y a " + compteurVoyelles + " voyelles et " + compteurConsonnes + " consonnes.");
 %>
 </p>
 
