@@ -134,9 +134,6 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
       try {
           int filmId = Integer.parseInt(filmIdString);
 
-          // Utilisez la connexion existante plutôt que d'en créer une nouvelle
-          Connection conn = DriverManager.getConnection(url, user, password);
-
           // Effectuez la mise à jour du titre dans la base de données en utilisant JDBC
           String updateSql = "UPDATE Film SET titre = ? WHERE idFilm = ?";
           PreparedStatement updateStmt = conn.prepareStatement(updateSql);
