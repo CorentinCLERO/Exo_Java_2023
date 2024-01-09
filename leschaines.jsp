@@ -129,7 +129,7 @@ réponse : <br/>
 <p>
 réponse : <br/>
 <%
-    for (int i = chaine.length(); i >= 0; i--) {
+    for (int i = chaine.length() - 1; i >= 0; i--) {
         char caractere = chaine.charAt(i);
 %>
         <%= caractere %>
