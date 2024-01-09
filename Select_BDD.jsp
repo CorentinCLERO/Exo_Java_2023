@@ -134,9 +134,12 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
       try {
           int filmId = Integer.parseInt(filmIdString);
 
+          Connection connPUT = DriverManager.getConnection(url, user, password); // Ne pas créer une nouvelle connexion
+
+
           // Effectuez la mise à jour du titre dans la base de données en utilisant JDBC
           String updateSql = "UPDATE Film SET titre = ? WHERE idFilm = ?";
-          PreparedStatement updateStmt = conn.prepareStatement(updateSql);
+          PreparedStatement updateStmt = connPUT.prepareStatement(updateSql);
           updateStmt.setString(1, newTitle);
           updateStmt.setInt(2, filmId);
 
@@ -149,7 +152,7 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
 
           // Fermez les ressources
           updateStmt.close();
-          conn.close();
+          connPUT.close();
       } catch (NumberFormatException e) {
           // Gérer le cas où filmIdString n'est pas un nombre valide
           out.println("L'ID du film n'est pas valide !");
