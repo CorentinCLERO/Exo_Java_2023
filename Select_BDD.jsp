@@ -44,15 +44,18 @@
 <p>
 Réponse : <br/>
 <%
+out.println("Début de l'exercice 1");
 while (rs.next()) {
   String colonne1 = rs.getString("idFilm");
   String colonne2 = rs.getString("titre");
   String colonne3 = rs.getString("année");
   int colonne3num = Integer.parseInt(colonne3);
+  out.println(colonne3num)
   if (2000 < colonne3num && colonne3num < 2015) {
     out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
   }
 }
+out.println("Fin de l'exercice 1");
 %>
 </p>
 
