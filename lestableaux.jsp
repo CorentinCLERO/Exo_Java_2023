@@ -117,14 +117,24 @@ réponse : <br/>
 int differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[0]) - 0);
 int littleAbs = Integer.parseInt(tableauDeChiffres[0]);
 
-if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) < differenceAbs ) {
-    if ((Integer.parseInt(tableauDeChiffres[1]) - 0) > littleAbs) {
+if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) <= differenceAbs ) {
+    if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) == differenceAbs) {
+        if (Integer.parseInt(tableauDeChiffres[1]) > littleAbs) {
+            differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0);
+            littleAbs = Integer.parseInt(tableauDeChiffres[1]);
+        }
+    } else {
         differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0);
         littleAbs = Integer.parseInt(tableauDeChiffres[1]);
     }
 }
-if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) < differenceAbs ) {
-    if ((Integer.parseInt(tableauDeChiffres[2]) - 0) > littleAbs) {
+if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) <= differenceAbs ) {
+    if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) == differenceAbs) {
+        if (Integer.parseInt(tableauDeChiffres[2]) > littleAbs) {
+            differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0);
+            littleAbs = Integer.parseInt(tableauDeChiffres[2]);
+        }
+    } else {
         differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0);
         littleAbs = Integer.parseInt(tableauDeChiffres[2]);
     }
