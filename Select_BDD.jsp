@@ -65,8 +65,18 @@ out.println("Fin de l'exercice 1");
 Réponse : <br/>
 <input type="number" id="inputValeur" name="number">
 <input type="submit" value="Afficher">
-<% String yearString = request.getParameter("number"); %>
-<% int year = Integer.parseInt(yearString); %>
+<% 
+String yearString = request.getParameter("number");
+int year = 0;  // Initialisation avec une valeur par défaut
+
+if (yearString != null && !yearString.isEmpty()) {
+    try {
+        year = Integer.parseInt(yearString);
+    } catch (NumberFormatException e) {
+        // Gérer le cas où la chaîne n'est pas un nombre valide
+    }
+}
+%>
 <%
 
 %>
