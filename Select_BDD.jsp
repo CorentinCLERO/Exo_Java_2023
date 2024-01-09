@@ -23,14 +23,27 @@
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
 
+        List<Map<String, String>> films = new ArrayList<Map<String, String>>();
+
         // Afficher les résultats (à adapter selon vos besoins)
         while (rs.next()) {
-            String colonne1 = rs.getString("idFilm");
-            String colonne2 = rs.getString("titre");
-            String colonne3 = rs.getString("année");
-            // Faites ce que vous voulez avec les données...
-            //Exemple d'affichage de 2 colonnes
-            out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
+          Map<String, String> filmMap = new HashMap<String, String>();
+
+          String colonne1 = rs.getString("idFilm");
+          String colonne2 = rs.getString("titre");
+          String colonne3 = rs.getString("année");
+          
+          // Remplissez la HashMap avec les données du film
+          filmMap.put("id", colonne1);
+          filmMap.put("titre", colonne2);
+          filmMap.put("année", colonne3);
+
+          // Ajoutez la HashMap à la liste des films
+          films.add(filmMap);
+  
+          // Faites ce que vous voulez avec les données...
+          //Exemple d'affichage de 2 colonnes
+          out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
         }
 
         // Fermer les ressources 
@@ -44,18 +57,16 @@
 <p>
 Réponse : <br/>
 <%
-out.println("Début de l'exercice 1");
-while (rs.next()) {
-  String colonne1 = rs.getString("idFilm");
-  String colonne2 = rs.getString("titre");
-  String colonne3 = rs.getString("année");
-  int colonne3num = Integer.parseInt(colonne3);
-  out.println(colonne3num);
-  if (2000 < colonne3num && colonne3num < 2015) {
-    out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
+for (Map<String, String> film : films) {
+  String id = film.get("id");
+  String titre = film.get("titre");
+  String annee = film.get("année");
+  int anneenum = Integer.parseInt(annee);
+
+  if (2000 < anneenum && anneenum < 2015) {
+    out.println("id : " + id + ", titre : " + titre + ", année : " + annee + "</br>");
   }
 }
-out.println("Fin de l'exercice 1");
 %>
 </p>
 
