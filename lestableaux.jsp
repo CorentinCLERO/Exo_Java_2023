@@ -91,7 +91,21 @@ out.print(lowerNumber);
 <p>Trouvez la valeur la plus proche de 0 (chiffres positifs ou négatifs)</p>
 <p>
 réponse : <br/>
+<%
+int difference = Math.abs(Integer.parseInt(tableauDeChiffres[0]) - 0)
+int little = Integer.parseInt(tableauDeChiffres[0])
 
+if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) < difference ) {
+    difference = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0)
+    little = Integer.parseInt(tableauDeChiffres[1])
+}
+if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) < difference ) {
+    difference = Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0)
+    little = Integer.parseInt(tableauDeChiffres[2])
+}
+
+out.print(little)
+%>
 </p>
 
 <h2>Exercice 7 : La valeur le plus proche de 0 (2° version)</h2>
