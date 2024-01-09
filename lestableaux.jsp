@@ -140,7 +140,7 @@ if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) <= differenceAbs ) {
     }
 }
 
-out.print(little);
+out.print(littleAbs);
 %>
 </p>
 
