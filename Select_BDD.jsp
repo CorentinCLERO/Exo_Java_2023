@@ -110,7 +110,6 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
     }
 }
 %>
-
 </p>
 
 <h2>Exercice 3 : Modification du titre du film</h2>
@@ -167,7 +166,6 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
 }
 %>
 
-
 <h2>Exercice 4 : Ajouter un nouveau film</h2>
 <p>Créer un formulaire pour saisir un nouveau film dans la base de données</p>
 <p>
@@ -179,6 +177,8 @@ Réponse : <br/>
     <input type="text" id="newFilmTitle" name="newFilmTitle"><br>
     <label for="newFilmYear">Année du film :</label>
     <input type="text" id="newFilmYear" name="newFilmYear"><br>
+    <label for="newFilmGenre">Genre du film :</label>
+    <input type="text" id="newFilmGenre" name="newFilmGenre"><br>
     <input type="submit" value="Ajouter le film">
 </form>
 </p>
@@ -187,6 +187,7 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
     String newFilmIdString = request.getParameter("newFilmId");
     String newFilmTitle = request.getParameter("newFilmTitle");
     String newFilmYearString = request.getParameter("newFilmYear");
+    String newFilmGenre = request.getParameter("newFilmGenre"); // Récupération du genre
 
     if (newFilmIdString != null && !newFilmIdString.isEmpty() && newFilmTitle != null && !newFilmTitle.isEmpty() && newFilmYearString != null && !newFilmYearString.isEmpty()) {
         try {
@@ -197,11 +198,12 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
             Connection connINS = DriverManager.getConnection(url, user, password); // Ne pas créer une nouvelle connexion
 
             // Effectuez l'insertion du nouveau film dans la base de données en utilisant JDBC
-            String insertSql = "INSERT INTO Film (idFilm, titre, année) VALUES (?, ?, ?)";
+            String insertSql = "INSERT INTO Film (idFilm, titre, année, genre) VALUES (?, ?, ?, ?)";
             PreparedStatement insertStmt = connINS.prepareStatement(insertSql);
             insertStmt.setInt(1, newFilmId);
             insertStmt.setString(2, newFilmTitle);
             insertStmt.setInt(3, newFilmYear);
+            insertStmt.setString(4, newFilmGenre); // Insérer le genre
 
             int rowsAffected = insertStmt.executeUpdate();
             if (rowsAffected > 0) {
@@ -226,6 +228,7 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
     }
 }
 %>
+
 
 
 
