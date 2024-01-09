@@ -84,30 +84,32 @@ Réponse : <br/>
 </form>
 
 <% 
-String yearString = request.getParameter("number");
-int year = 0;  // Initialisation avec une valeur par défaut
+if ("POST".equals(request.getMethod())) {
+    String yearString = request.getParameter("number");
+    int year = 0;  // Initialisation avec une valeur par défaut
 
-if (yearString != null && !yearString.isEmpty()) {
-    try {
-        year = Integer.parseInt(yearString);
-    } catch (NumberFormatException e) {
-        // Gérer le cas où la chaîne n'est pas un nombre valide
+    if (yearString != null && !yearString.isEmpty()) {
+        try {
+            year = Integer.parseInt(yearString);
+        } catch (NumberFormatException e) {
+            // Gérer le cas où la chaîne n'est pas un nombre valide
+        }
+    }
+
+    for (Map<String, String> film : films) {
+        String id = film.get("id");
+        String titre = film.get("titre");
+        String annee = film.get("année");
+        int anneenum = Integer.parseInt(annee);
+
+        if (anneenum == year) {
+            out.println("id : " + id + ", titre : " + titre + ", année : " + annee + "</br>");
+        }
     }
 }
-
-for (Map<String, String> film : films) {
-  String id = film.get("id");
-  String titre = film.get("titre");
-  String annee = film.get("année");
-  int anneenum = Integer.parseInt(annee);
-
-  if (anneenum == year) {
-    out.println("id : " + id + ", titre : " + titre + ", année : " + annee + "</br>");
-  }
-}
-
 %>
 </p>
+
 
 <h2>Exercice 3 : Modification du titre du film</h2>
 <p>Créer un fichier permettant de modifier le titre d'un film sur la base de son ID (ID choisi par l'utilisateur)</p>
