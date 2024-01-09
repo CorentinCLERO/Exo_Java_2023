@@ -102,7 +102,17 @@ Exemple : L'hiver sera pluvieux</br>
 Lhvrsr lvex</p>
 <p>
 réponse : <br/>
+<%
+for (int i = 0; i < chaine.length(); i++) {
+    char caractere = chaine.charAt(i);
 
+    if (i % 0 = 0) {
+%>
+        <%= caractere %>
+<%
+    }
+}
+%>
 </p>
 
 <h2>Exercice 5 : La phrase en verlant</h2>
