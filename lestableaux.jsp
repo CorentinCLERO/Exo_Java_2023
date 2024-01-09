@@ -92,16 +92,16 @@ out.print(lowerNumber);
 <p>
 réponse : <br/>
 <%
-int difference = Math.abs(Integer.parseInt(tableauDeChiffres[0]) - 0)
-int little = Integer.parseInt(tableauDeChiffres[0])
+int difference = Math.abs(Integer.parseInt(tableauDeChiffres[0]) - 0);
+int little = Integer.parseInt(tableauDeChiffres[0]);
 
 if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) < difference ) {
-    difference = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0)
-    little = Integer.parseInt(tableauDeChiffres[1])
+    difference = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0);
+    little = Integer.parseInt(tableauDeChiffres[1]);
 }
 if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) < difference ) {
-    difference = Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0)
-    little = Integer.parseInt(tableauDeChiffres[2])
+    difference = Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0);
+    little = Integer.parseInt(tableauDeChiffres[2]);
 }
 
 out.print(little)
@@ -113,7 +113,24 @@ out.print(little)
 <p>En cas d'égalité entre un chiffre positif et négatif, affichez le chiffre positif</p>
 <p>
 réponse : <br/>
+<%
+int difference = Math.abs(Integer.parseInt(tableauDeChiffres[0]) - 0)
+int little = Integer.parseInt(tableauDeChiffres[0])
 
+if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) < difference ) {
+    difference = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0)
+    little = Integer.parseInt(tableauDeChiffres[1])
+} else if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) = difference) {
+    difference = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0)
+    little = Integer.parseInt(tableauDeChiffres[1])
+}
+if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) < difference ) {
+    difference = Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0)
+    little = Integer.parseInt(tableauDeChiffres[2])
+}
+
+out.print(little)
+%>
 </p>
 
 <% } %>
