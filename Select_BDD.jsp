@@ -113,49 +113,43 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
 
 </p>
 
-// <h2>Exercice 2 : Année de recherche</h2>
-// <p>Créer un champ de saisie permettant à l'utilisateur de choisir l'année de sa recherche.</p>
-// <p>
-// Réponse : <br/>
-// <form action="#" method="post">
-//     <input type="number" id="inputValeur" name="number">
-//     <input type="submit" value="Afficher">
-// </form>
-
-// <% 
-// String yearString = request.getParameter("number");
-// int year = 0;  // Initialisation avec une valeur par défaut
-
-// if (yearString != null && !yearString.isEmpty()) {
-//     try {
-//         year = Integer.parseInt(yearString);
-//     } catch (NumberFormatException e) {
-//         // Gérer le cas où la chaîne n'est pas un nombre valide
-//     }
-// }
-
-// for (Map<String, String> film : films) {
-//   String id = film.get("id");
-//   String titre = film.get("titre");
-//   String annee = film.get("année");
-//   int anneenum = Integer.parseInt(annee);
-
-//   if (anneenum == year) {
-//     out.println("id : " + id + ", titre : " + titre + ", année : " + annee + "</br>");
-//   }
-// }
-
-// %>
-// </p>
-
 <h2>Exercice 3 : Modification du titre du film</h2>
 <p>Créer un fichier permettant de modifier le titre d'un film sur la base de son ID (ID choisi par l'utilisateur)</p>
 <p>
 Réponse : <br/>
-<%
-
-%>
+<form method="post">
+    <label for="filmId">ID du film :</label>
+    <input type="text" id="filmId" name="filmId"><br>
+    <label for="newTitle">Nouveau titre :</label>
+    <input type="text" id="newTitle" name="newTitle"><br>
+    <input type="submit" value="Modifier le titre">
+</form>
 </p>
+<%
+if (request.getMethod().equalsIgnoreCase("POST")) {
+    String filmIdString = request.getParameter("filmId");
+    String newTitle = request.getParameter("newTitle");
+
+    if (filmIdString != null && !filmIdString.isEmpty() && newTitle != null && !newTitle.isEmpty()) {
+        try {
+            int filmId = Integer.parseInt(filmIdString);
+
+            // Effectuez la mise à jour du titre dans la base de données en utilisant JDBC
+            // Vous devez écrire la logique de mise à jour ici en utilisant la valeur de filmId et newTitle
+
+            // Après la mise à jour, vous pouvez afficher un message de confirmation
+            out.println("Titre du film avec l'ID " + filmId + " a été modifié avec succès !");
+        } catch (NumberFormatException e) {
+            // Gérer le cas où filmIdString n'est pas un nombre valide
+            out.println("L'ID du film n'est pas valide !");
+        }
+    } else {
+        // Gérer le cas où les champs sont vides
+        out.println("Veuillez remplir tous les champs !");
+    }
+}
+%>
+
 
 <h2>Exercice 4 : La valeur maximum</h2>
 <p>Créer un formulaire pour saisir un nouveau film dans la base de données</p>
