@@ -54,16 +54,17 @@ out.print(Integer.parseInt(tableauDeChiffres[0]) + Integer.parseInt(tableauDeChi
 <p>
 réponse : <br/>
 <%
-out.print(
-    int bigerNumber = Integer.parseInt(tableauDeChiffres[0])
-    if (bigerNumber < Integer.parseInt(tableauDeChiffres[1])) {
-        bigerNumber = Integer.parseInt(tableauDeChiffres[1])
-    }
-    if (bigerNumber < Integer.parseInt(tableauDeChiffres[2])) {
-        bigerNumber = Integer.parseInt(tableauDeChiffres[2])
-    }
-    bigerNimber
-);
+int bigerNumber = Integer.parseInt(tableauDeChiffres[0]);
+
+if (bigerNumber < Integer.parseInt(tableauDeChiffres[1])) {
+    bigerNumber = Integer.parseInt(tableauDeChiffres[1]);
+}
+
+if (bigerNumber < Integer.parseInt(tableauDeChiffres[2])) {
+    bigerNumber = Integer.parseInt(tableauDeChiffres[2]);
+}
+
+out.print(bigerNumber);
 %>
 </p>
 
@@ -72,16 +73,17 @@ out.print(
 <p>
 réponse : <br/>
 <%
-out.print(
-    int lowerNumber = Integer.parseInt(tableauDeChiffres[0])
-    if (lowerNumber > Integer.parseInt(tableauDeChiffres[1])) {
-        lowerNumber = Integer.parseInt(tableauDeChiffres[1])
-    }
-    if (lowerNumber > Integer.parseInt(tableauDeChiffres[2])) {
-        lowerNumber = Integer.parseInt(tableauDeChiffres[2])
-    }
-    lowerNimber
-);
+int lowerNumber = Integer.parseInt(tableauDeChiffres[0]);
+
+if (lowerNumber > Integer.parseInt(tableauDeChiffres[1])) {
+    lowerNumber = Integer.parseInt(tableauDeChiffres[1]);
+}
+
+if (lowerNumber > Integer.parseInt(tableauDeChiffres[2])) {
+    lowerNumber = Integer.parseInt(tableauDeChiffres[2]);
+}
+
+out.print(lowerNumber);
 %>
 </p>
 
