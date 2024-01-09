@@ -173,6 +173,8 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
 <p>
 Réponse : <br/>
 <form method="post">
+    <label for="newFilmId">ID du film :</label>
+    <input type="text" id="newFilmId" name="newFilmId"><br>
     <label for="newFilmTitle">Titre du film :</label>
     <input type="text" id="newFilmTitle" name="newFilmTitle"><br>
     <label for="newFilmYear">Année du film :</label>
@@ -182,21 +184,24 @@ Réponse : <br/>
 </p>
 <%
 if (request.getMethod().equalsIgnoreCase("POST")) {
+    String newFilmIdString = request.getParameter("newFilmId");
     String newFilmTitle = request.getParameter("newFilmTitle");
     String newFilmYearString = request.getParameter("newFilmYear");
 
-    if (newFilmTitle != null && !newFilmTitle.isEmpty() && newFilmYearString != null && !newFilmYearString.isEmpty()) {
+    if (newFilmIdString != null && !newFilmIdString.isEmpty() && newFilmTitle != null && !newFilmTitle.isEmpty() && newFilmYearString != null && !newFilmYearString.isEmpty()) {
         try {
+            int newFilmId = Integer.parseInt(newFilmIdString);
             int newFilmYear = Integer.parseInt(newFilmYearString);
 
             // Utilisez la connexion existante plutôt que d'en créer une nouvelle
             Connection connINS = DriverManager.getConnection(url, user, password); // Ne pas créer une nouvelle connexion
 
             // Effectuez l'insertion du nouveau film dans la base de données en utilisant JDBC
-            String insertSql = "INSERT INTO Film (titre, année) VALUES (?, ?)";
+            String insertSql = "INSERT INTO Film (idFilm, titre, année) VALUES (?, ?, ?)";
             PreparedStatement insertStmt = connINS.prepareStatement(insertSql);
-            insertStmt.setString(1, newFilmTitle);
-            insertStmt.setInt(2, newFilmYear);
+            insertStmt.setInt(1, newFilmId);
+            insertStmt.setString(2, newFilmTitle);
+            insertStmt.setInt(3, newFilmYear);
 
             int rowsAffected = insertStmt.executeUpdate();
             if (rowsAffected > 0) {
@@ -209,8 +214,8 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
             insertStmt.close();
             connINS.close();            
         } catch (NumberFormatException e) {
-            // Gérer le cas où newFilmYearString n'est pas un nombre valide
-            out.println("L'année du film n'est pas valide !");
+            // Gérer le cas où newFilmIdString ou newFilmYearString n'est pas un nombre valide
+            out.println("L'ID du film ou l'année du film n'est pas valide !");
         } catch (SQLException ex) {
             // Gérer les erreurs liées à la base de données
             out.println("Erreur lors de l'ajout du nouveau film : " + ex.getMessage());
@@ -221,6 +226,7 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
     }
 }
 %>
+
 
 
 </body>
