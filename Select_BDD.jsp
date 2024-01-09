@@ -50,7 +50,7 @@ while (rs.next()) {
   String colonne2 = rs.getString("titre");
   String colonne3 = rs.getString("année");
   int colonne3num = Integer.parseInt(colonne3);
-  out.println(colonne3num)
+  out.println(colonne3num);
   if (2000 < colonne3num && colonne3num < 2015) {
     out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
   }
@@ -65,7 +65,7 @@ out.println("Fin de l'exercice 1");
 Réponse : <br/>
 <input type="number" id="inputValeur" name="number">
 <input type="submit" value="Afficher">
-<% String chaine = request.getParameter("number"); %>
+<% Int year = request.getParameter("number"); %>
 <%
 
 %>
