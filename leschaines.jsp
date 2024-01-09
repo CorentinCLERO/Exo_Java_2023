@@ -80,18 +80,19 @@ pluvieux</p>
 <p>
 réponse : <br/>
 <%
-    for (int i = 0; i < chaine.length(); i++) {
-        char caractere = chaine.charAt(i);
+for (int i = 0; i < chaine.length(); i++) {
+    char caractere = chaine.charAt(i);
+
+    if (caractere != ' ') {
 %>
-        <%
-        if (cactere != " ") {
-            caractere 
-        } else {
-            <br/>
-        }
-        %><br/>
+        <%= caractere %>
+<%
+    } else {
+%>
+        <br/>
 <%
     }
+}
 %>
 </p>
 
