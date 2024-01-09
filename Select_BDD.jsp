@@ -168,14 +168,60 @@ if (request.getMethod().equalsIgnoreCase("POST")) {
 %>
 
 
-<h2>Exercice 4 : La valeur maximum</h2>
+<h2>Exercice 4 : Ajouter un nouveau film</h2>
 <p>Créer un formulaire pour saisir un nouveau film dans la base de données</p>
 <p>
 Réponse : <br/>
-<%
-
-%>
+<form method="post">
+    <label for="newFilmTitle">Titre du film :</label>
+    <input type="text" id="newFilmTitle" name="newFilmTitle"><br>
+    <label for="newFilmYear">Année du film :</label>
+    <input type="text" id="newFilmYear" name="newFilmYear"><br>
+    <input type="submit" value="Ajouter le film">
+</form>
 </p>
+<%
+if (request.getMethod().equalsIgnoreCase("POST")) {
+    String newFilmTitle = request.getParameter("newFilmTitle");
+    String newFilmYearString = request.getParameter("newFilmYear");
+
+    if (newFilmTitle != null && !newFilmTitle.isEmpty() && newFilmYearString != null && !newFilmYearString.isEmpty()) {
+        try {
+            int newFilmYear = Integer.parseInt(newFilmYearString);
+
+            // Utilisez la connexion existante plutôt que d'en créer une nouvelle
+            Connection connINS = DriverManager.getConnection(url, user, password); // Ne pas créer une nouvelle connexion
+
+            // Effectuez l'insertion du nouveau film dans la base de données en utilisant JDBC
+            String insertSql = "INSERT INTO Film (titre, année) VALUES (?, ?)";
+            PreparedStatement insertStmt = connINS.prepareStatement(insertSql);
+            insertStmt.setString(1, newFilmTitle);
+            insertStmt.setInt(2, newFilmYear);
+
+            int rowsAffected = insertStmt.executeUpdate();
+            if (rowsAffected > 0) {
+                out.println("Nouveau film ajouté avec succès !");
+            } else {
+                out.println("Erreur lors de l'ajout du nouveau film.");
+            }
+
+            // Fermez les ressources
+            insertStmt.close();
+            connINS.close();            
+        } catch (NumberFormatException e) {
+            // Gérer le cas où newFilmYearString n'est pas un nombre valide
+            out.println("L'année du film n'est pas valide !");
+        } catch (SQLException ex) {
+            // Gérer les erreurs liées à la base de données
+            out.println("Erreur lors de l'ajout du nouveau film : " + ex.getMessage());
+        }
+    } else {
+        // Gérer le cas où les champs sont vides
+        out.println("Veuillez remplir tous les champs !");
+    }
+}
+%>
+
 
 </body>
 </html>
