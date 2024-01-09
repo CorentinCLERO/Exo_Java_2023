@@ -79,7 +79,20 @@ sera</br>
 pluvieux</p>
 <p>
 réponse : <br/>
-
+<%
+    for (int i = 0; i < chaine.length(); i++) {
+        char caractere = chaine.charAt(i);
+%>
+        <%
+        if (cactere != " ") {
+            caractere 
+        } else {
+            <br/>
+        }
+        %><br/>
+<%
+    }
+%>
 </p>
 
 <h2>Exercice 4 : Afficher une lettre sur deux</h2>
