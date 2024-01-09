@@ -78,38 +78,36 @@ for (Map<String, String> film : films) {
 <p>Créer un champ de saisie permettant à l'utilisateur de choisir l'année de sa recherche.</p>
 <p>
 Réponse : <br/>
-<form action="votre_page.jsp" method="post">
+<form action="#" method="post">
     <input type="number" id="inputValeur" name="number">
     <input type="submit" value="Afficher">
 </form>
 
 <% 
-if ("POST".equals(request.getMethod())) {
-    String yearString = request.getParameter("number");
-    int year = 0;  // Initialisation avec une valeur par défaut
+String yearString = request.getParameter("number");
+int year = 0;  // Initialisation avec une valeur par défaut
 
-    if (yearString != null && !yearString.isEmpty()) {
-        try {
-            year = Integer.parseInt(yearString);
-        } catch (NumberFormatException e) {
-            // Gérer le cas où la chaîne n'est pas un nombre valide
-        }
-    }
-
-    for (Map<String, String> film : films) {
-        String id = film.get("id");
-        String titre = film.get("titre");
-        String annee = film.get("année");
-        int anneenum = Integer.parseInt(annee);
-
-        if (anneenum == year) {
-            out.println("id : " + id + ", titre : " + titre + ", année : " + annee + "</br>");
-        }
+if (yearString != null && !yearString.isEmpty()) {
+    try {
+        year = Integer.parseInt(yearString);
+    } catch (NumberFormatException e) {
+        // Gérer le cas où la chaîne n'est pas un nombre valide
     }
 }
+
+for (Map<String, String> film : films) {
+  String id = film.get("id");
+  String titre = film.get("titre");
+  String annee = film.get("année");
+  int anneenum = Integer.parseInt(annee);
+
+  if (anneenum == year) {
+    out.println("id : " + id + ", titre : " + titre + ", année : " + annee + "</br>");
+  }
+}
+
 %>
 </p>
-
 
 <h2>Exercice 3 : Modification du titre du film</h2>
 <p>Créer un fichier permettant de modifier le titre d'un film sur la base de son ID (ID choisi par l'utilisateur)</p>
