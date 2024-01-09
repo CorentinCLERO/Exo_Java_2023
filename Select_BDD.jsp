@@ -48,7 +48,8 @@ while (rs.next()) {
   String colonne1 = rs.getString("idFilm");
   String colonne2 = rs.getString("titre");
   String colonne3 = rs.getString("année");
-  if (2000 < colonne3 && colonne3 < 2015) {
+  int colonne3num = Integer.parseInt(colonne3Str);
+  if (2000 < colonne3num && colonne3num < 2015) {
     out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
   }
 }
@@ -59,7 +60,10 @@ while (rs.next()) {
 <p>Créer un champ de saisie permettant à l'utilisateur de choisir l'année de sa recherche.</p>
 <p>
 Réponse : <br/>
+<input type="number" id="inputValeur" name="number">
+<input type="submit" value="Afficher">
 <%
+<% String chaine = request.getParameter("number"); %>
 
 %>
 </p>
