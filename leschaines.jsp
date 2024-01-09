@@ -106,7 +106,7 @@ réponse : <br/>
 for (int i = 0; i < chaine.length(); i++) {
     char caractere = chaine.charAt(i);
 
-    if (i % 0 = 0) {
+    if (i % 0 == 0) {
 %>
         <%= caractere %>
 <%
