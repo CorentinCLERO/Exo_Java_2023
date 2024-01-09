@@ -106,7 +106,7 @@ réponse : <br/>
 for (int i = 0; i < chaine.length(); i++) {
     char caractere = chaine.charAt(i);
 
-    if (i % 0 == 0) {
+    if (i % 2 == 0) {
 %>
         <%= caractere %>
 <%
@@ -128,7 +128,14 @@ réponse : <br/>
 <p>Ecrire le programme afin de compter les consonnes et les voyelles dans votre texte</p>
 <p>
 réponse : <br/>
-
+<%
+    for (int i = chaine.length(); i >= 0; i--) {
+        char caractere = chaine.charAt(i);
+%>
+        <%= caractere %>
+<%
+    }
+%>
 </p>
 
 <% } %>
