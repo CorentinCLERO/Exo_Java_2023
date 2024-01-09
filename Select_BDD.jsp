@@ -65,7 +65,7 @@ out.println("Fin de l'exercice 1");
 Réponse : <br/>
 <input type="number" id="inputValeur" name="number">
 <input type="submit" value="Afficher">
-<% Int year = request.getParameter("number"); %>
+<% int year = request.getParameter("number"); %>
 <%
 
 %>
