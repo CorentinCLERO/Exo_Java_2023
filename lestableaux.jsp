@@ -118,19 +118,13 @@ int differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[0]) - 0);
 int littleAbs = Integer.parseInt(tableauDeChiffres[0]);
 
 if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) < differenceAbs ) {
-    differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0);
-    littleAbs = Integer.parseInt(tableauDeChiffres[1]);
-} else if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) == differenceAbs) {
-    if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) < differenceAbs) {
+    if ((Integer.parseInt(tableauDeChiffres[1]) - 0) > littleAbs) {
         differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0);
         littleAbs = Integer.parseInt(tableauDeChiffres[1]);
     }
 }
 if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) < differenceAbs ) {
-    differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0);
-    littleAbs = Integer.parseInt(tableauDeChiffres[2]);
-} else if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) == differenceAbs) {
-    if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) < differenceAbs) {
+    if ((Integer.parseInt(tableauDeChiffres[2]) - 0) > littleAbs) {
         differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0);
         littleAbs = Integer.parseInt(tableauDeChiffres[2]);
     }
