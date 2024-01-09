@@ -53,14 +53,36 @@ out.print(Integer.parseInt(tableauDeChiffres[0]) + Integer.parseInt(tableauDeChi
 <p>Ecrire un programme pour afficher la valeur maximale saisie par l'utilisateur</p>
 <p>
 réponse : <br/>
-
+<%
+out.print(
+    int bigerNumber = Integer.parseInt(tableauDeChiffres[0])
+    if (bigerNumber < Integer.parseInt(tableauDeChiffres[1])) {
+        bigerNumber = Integer.parseInt(tableauDeChiffres[1])
+    }
+    if (bigerNumber < Integer.parseInt(tableauDeChiffres[2])) {
+        bigerNumber = Integer.parseInt(tableauDeChiffres[2])
+    }
+    bigerNimber
+);
+%>
 </p>
 
 <h2>Exercice 5 : La valeur minimale</h2>
 <p>Ecrire un programme pour afficher la valeur minimale saisie par l'utilisateur</p>
 <p>
 réponse : <br/>
-
+<%
+out.print(
+    int lowerNumber = Integer.parseInt(tableauDeChiffres[0])
+    if (lowerNumber > Integer.parseInt(tableauDeChiffres[1])) {
+        lowerNumber = Integer.parseInt(tableauDeChiffres[1])
+    }
+    if (lowerNumber > Integer.parseInt(tableauDeChiffres[2])) {
+        lowerNumber = Integer.parseInt(tableauDeChiffres[2])
+    }
+    lowerNimber
+);
+%>
 </p>
 
 <h2>Exercice 6 : La valeur le plus proche de 0</h2>
