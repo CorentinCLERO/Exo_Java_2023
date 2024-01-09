@@ -114,25 +114,25 @@ out.print(little)
 <p>
 réponse : <br/>
 <%
-int difference = Math.abs(Integer.parseInt(tableauDeChiffres[0]) - 0);
-int little = Integer.parseInt(tableauDeChiffres[0]);
+int differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[0]) - 0);
+int littleAbs = Integer.parseInt(tableauDeChiffres[0]);
 
-if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) < difference ) {
-    difference = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0);
-    little = Integer.parseInt(tableauDeChiffres[1]);
-} else if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) = difference) {
-    if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) < difference) {
-        difference = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0);
-        little = Integer.parseInt(tableauDeChiffres[1]);
+if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) < differenceAbs ) {
+    differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0);
+    littleAbs = Integer.parseInt(tableauDeChiffres[1]);
+} else if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) = differenceAbs) {
+    if (Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0) < differenceAbs) {
+        differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[1]) - 0);
+        littleAbs = Integer.parseInt(tableauDeChiffres[1]);
     }
 }
-if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) < difference ) {
-    difference = Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0);
-    little = Integer.parseInt(tableauDeChiffres[2]);
-} else if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) = difference) {
-    if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) < difference) {
-        difference = Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0);
-        little = Integer.parseInt(tableauDeChiffres[2]);
+if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) < differenceAbs ) {
+    differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0);
+    littleAbs = Integer.parseInt(tableauDeChiffres[2]);
+} else if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) = differenceAbs) {
+    if (Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0) < differenceAbs) {
+        differenceAbs = Math.abs(Integer.parseInt(tableauDeChiffres[2]) - 0);
+        littleAbs = Integer.parseInt(tableauDeChiffres[2]);
     }
 }
 
