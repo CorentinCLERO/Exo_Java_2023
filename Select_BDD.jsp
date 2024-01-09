@@ -78,8 +78,11 @@ for (Map<String, String> film : films) {
 <p>Créer un champ de saisie permettant à l'utilisateur de choisir l'année de sa recherche.</p>
 <p>
 Réponse : <br/>
-<input type="number" id="inputValeur" name="number">
-<input type="submit" value="Afficher">
+<form action="votre_page.jsp" method="post">
+    <input type="number" id="inputValeur" name="number">
+    <input type="submit" value="Afficher">
+</form>
+
 <% 
 String yearString = request.getParameter("number");
 int year = 0;  // Initialisation avec une valeur par défaut
