@@ -127,27 +127,43 @@ Réponse : <br/>
 </p>
 <%
 if (request.getMethod().equalsIgnoreCase("POST")) {
-    String filmIdString = request.getParameter("filmId");
-    String newTitle = request.getParameter("newTitle");
+  String filmIdString = request.getParameter("filmId");
+  String newTitle = request.getParameter("newTitle");
 
-    if (filmIdString != null && !filmIdString.isEmpty() && newTitle != null && !newTitle.isEmpty()) {
-        try {
-            int filmId = Integer.parseInt(filmIdString);
+  if (filmIdString != null && !filmIdString.isEmpty() && newTitle != null && !newTitle.isEmpty()) {
+      try {
+          int filmId = Integer.parseInt(filmIdString);
 
-            // Effectuez la mise à jour du titre dans la base de données en utilisant JDBC
-            // Vous devez écrire la logique de mise à jour ici en utilisant la valeur de filmId et newTitle
+          // Effectuez la mise à jour du titre dans la base de données en utilisant JDBC
+          Connection conn = DriverManager.getConnection(url, user, password);
+          String updateSql = "UPDATE Film SET titre = ? WHERE idFilm = ?";
+          PreparedStatement updateStmt = conn.prepareStatement(updateSql);
+          updateStmt.setString(1, newTitle);
+          updateStmt.setInt(2, filmId);
 
-            // Après la mise à jour, vous pouvez afficher un message de confirmation
-            out.println("Titre du film avec l'ID " + filmId + " a été modifié avec succès !");
-        } catch (NumberFormatException e) {
-            // Gérer le cas où filmIdString n'est pas un nombre valide
-            out.println("L'ID du film n'est pas valide !");
-        }
-    } else {
-        // Gérer le cas où les champs sont vides
-        out.println("Veuillez remplir tous les champs !");
-    }
+          int rowsAffected = updateStmt.executeUpdate();
+          if (rowsAffected > 0) {
+              out.println("Titre du film avec l'ID " + filmId + " a été modifié avec succès !");
+          } else {
+              out.println("Aucun film trouvé avec l'ID " + filmId);
+          }
+
+          // Fermez les ressources
+          updateStmt.close();
+          conn.close();
+      } catch (NumberFormatException e) {
+          // Gérer le cas où filmIdString n'est pas un nombre valide
+          out.println("L'ID du film n'est pas valide !");
+      } catch (SQLException ex) {
+          // Gérer les erreurs liées à la base de données
+          out.println("Erreur lors de la mise à jour du titre : " + ex.getMessage());
+      }
+  } else {
+      // Gérer le cas où les champs sont vides
+      out.println("Veuillez remplir tous les champs !");
+  }
 }
+
 %>
 
 
